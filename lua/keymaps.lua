@@ -52,3 +52,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Custom: Start selection with Shift + Direction
+
+vim.keymap.set('n', '<s-up>', 'Vk')
+vim.keymap.set('n', '<s-down>', 'Vj')
