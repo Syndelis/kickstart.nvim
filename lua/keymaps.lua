@@ -57,3 +57,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.keymap.set('n', '<s-up>', 'Vk')
 vim.keymap.set('n', '<s-down>', 'Vj')
+
+-- Custom: Save on Ctrl + S
+
+vim.keymap.set({ 'n', 'i', 'v' }, '<c-s>', '<cmd>write<CR>')
