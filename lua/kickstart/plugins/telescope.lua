@@ -107,6 +107,26 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Custom: List commits
+      vim.keymap.set('n', '<leader>gl', function()
+        builtin.git_commits {
+          attach_mappings = function(_, map)
+            local actions_state = require 'telescope.actions.state'
+            local actions = require 'telescope.actions'
+            local project_commits_preview = require('vgit').project_commits_preview
+            function preview_commit(prompt_bufnr)
+              local selected_entry = actions_state.get_selected_entry()
+              project_commits_preview(selected_entry.value)
+              actions.close(prompt_bufnr)
+            end
+
+            map('n', '<cr>', preview_commit)
+            map('i', '<cr>', preview_commit)
+            return true
+          end,
+        }
+      end, { desc = 'Git Log' })
     end,
   },
 }
