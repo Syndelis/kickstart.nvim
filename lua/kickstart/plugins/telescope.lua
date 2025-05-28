@@ -108,6 +108,11 @@ return {
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
 
+      -- Custom: List files in current directory
+      vim.keymap.set({ 'n', 'i' }, '<c-p>', function()
+        builtin.find_files { cwd = vim.fn.getcwd() }
+      end, { desc = 'Jump to file' })
+
       -- Custom: List commits
       vim.keymap.set('n', '<leader>gl', function()
         builtin.git_commits {
