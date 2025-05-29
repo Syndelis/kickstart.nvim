@@ -86,4 +86,12 @@ vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decr
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
+-- Custom: Use jq for Json formatting
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'json' },
+  callback = function()
+    vim.api.nvim_set_option_value('formatprg', 'jq', { scope = 'local' })
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et
