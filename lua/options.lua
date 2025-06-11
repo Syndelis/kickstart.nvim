@@ -94,4 +94,7 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- Custom: Font for Neovide
+vim.o.guifont = 'Iosevka Custom:h12'
+
 -- vim: ts=2 sts=2 sw=2 et
