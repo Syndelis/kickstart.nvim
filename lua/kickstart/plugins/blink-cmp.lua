@@ -28,7 +28,12 @@ return {
           --   end,
           -- },
         },
-        opts = {},
+        opts = {
+          -- https://snoo.habedieeh.re/r/neovim/comments/12z0orb/unexpected_behavior_when_pressing_tab_in_insert/
+          history = true,
+          region_check_events = 'InsertEnter',
+          delete_check_events = 'TextChanged,InsertLeave',
+        },
       },
       'folke/lazydev.nvim',
     },
