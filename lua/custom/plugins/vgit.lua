@@ -39,6 +39,12 @@ return {
         },
         {
           mode = 'n',
+          key = '<leader>gbd',
+          handler = 'buffer_hunk_preview',
+          desc = 'Buffer diff',
+        },
+        {
+          mode = 'n',
           key = '<leader>gs',
           handler = 'project_stash_preview',
           desc = 'Stash preview',
