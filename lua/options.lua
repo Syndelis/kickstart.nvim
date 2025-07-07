@@ -98,4 +98,7 @@ vim.api.nvim_create_autocmd('FileType', {
 -- Custom: Font for Neovide
 vim.o.guifont = 'Iosevka Custom:h12'
 
+-- Custom: enable inlay hints
+vim.lsp.inlay_hint.enable(true)
+
 -- vim: ts=2 sts=2 sw=2 et
