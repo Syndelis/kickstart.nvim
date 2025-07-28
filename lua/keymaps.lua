@@ -51,13 +51,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- vim: ts=2 sts=2 sw=2 et
-
 -- Custom: Start selection with Shift + Direction
-
 vim.keymap.set('n', '<s-up>', 'Vk')
 vim.keymap.set('n', '<s-down>', 'Vj')
 
 -- Custom: Save on Ctrl + S
-
 vim.keymap.set({ 'n', 'i', 'v' }, '<c-s>', '<cmd>write<CR>')
+
+-- Custom: also toggle terminal on ctrl quote
+vim.keymap.set({ 'n', 'i', 't' }, "<c-'>", '<cmd>NeatermToggle<CR>')
+
+-- vim: ts=2 sts=2 sw=2 et
