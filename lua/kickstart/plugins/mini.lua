@@ -34,6 +34,11 @@ return {
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+
+      -- Custom: buffer zoom
+      local misc = require 'mini.misc'
+      misc.setup()
+      vim.keymap.set('n', '<C-w>z', misc.zoom, { desc = 'Zoom current buffer' })
     end,
   },
 }
