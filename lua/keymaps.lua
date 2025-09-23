@@ -63,7 +63,7 @@ vim.keymap.set({ 'n', 'i', 't' }, "<c-'>", '<cmd>NeatermToggle<CR>')
 
 -- Custom: copy buffer's filename
 vim.api.nvim_create_user_command('CopyRelPath', function()
-  vim.fn.setreg('+', vim.fn.expand '%')
+  vim.fn.setreg('"', vim.fn.expand '%')
 end, { desc = "Copy the current buffer's file path" })
 
 vim.keymap.set('n', '<c-w>y', '<cmd>CopyRelPath<CR>')
