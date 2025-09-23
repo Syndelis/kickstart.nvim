@@ -61,4 +61,11 @@ vim.keymap.set({ 'n', 'i', 'v' }, '<c-s>', '<cmd>write<CR>')
 -- Custom: also toggle terminal on ctrl quote
 vim.keymap.set({ 'n', 'i', 't' }, "<c-'>", '<cmd>NeatermToggle<CR>')
 
+-- Custom: copy buffer's filename
+vim.api.nvim_create_user_command('CopyRelPath', function()
+  vim.fn.setreg('+', vim.fn.expand '%')
+end, { desc = "Copy the current buffer's file path" })
+
+vim.keymap.set('n', '<c-w>y', '<cmd>CopyRelPath<CR>')
+
 -- vim: ts=2 sts=2 sw=2 et
