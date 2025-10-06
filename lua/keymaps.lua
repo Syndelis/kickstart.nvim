@@ -68,7 +68,4 @@ end, { desc = "Copy the current buffer's file path" })
 
 vim.keymap.set('n', '<c-w>y', '<cmd>CopyRelPath<CR>')
 
--- Custom: toggle wrap
-vim.keymap.set('n', '<leader>w', '<cmd>set wrap!<CR>', { desc = 'Toggle Wrap' })
-
 -- vim: ts=2 sts=2 sw=2 et
