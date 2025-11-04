@@ -89,6 +89,9 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
+  rocks = {
+    server = 'https://lumen-oss.github.io/rocks-binaries/',
+  },
 })
 
 -- vim: ts=2 sts=2 sw=2 et
